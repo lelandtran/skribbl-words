@@ -2,37 +2,44 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Skribbl Words</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
   <body>
-    <div>
-      <h2>Welcome to a Skribbl.io Word Generator</h2>
-      <h3>Below you'll find 50 random words to use</h3>
+    <div class="container">
+      <div class="jumbotron">
+        <h2>Welcome to a Skribbl.io Word Generator</h2>
+        <h3>Below you'll find 50 random words to use. Happy Skribbl-ing!</h3>
+      </div>
+      <div id="main">
+      </div>
     </div>
-    <div id="main">
-    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      let easyWordPoolWithDups = ["star","angel","fish","snowflake","neck","owl","baseball","clock","water","triangle","leaf","flower","cow","lion","corn","night","head","stairs","bee","float","backpack","button","zigzag","eyes","alive","chicken","legs","light","bunk bed","pizza","bridge","frog","bat","baby","cloud","feather","beach","bathroom","crack","jacket","inchworm","football","lollipop","carrot","cat","ants","glasses","candle","kitten","snake","lips","grapes","computer","rain","owl","skateboard","window","hamburger","purse","airplane","leaf","ghost","daisy","stairs","beak","mountain","river","table","coin","backpack","button","heart","zigzag","egg","king","island","lemon","curl","dinosaur","leg","ship","bathroom","cookie","crack","swimming pool","knee","jail","ocean","cherry","drum","caterpillar","oval","cheese","love","bone","cupcake","glasses","book","candle","door","angel","fish","owl","skateboard","woman","hamburger","boat","fork","clock","purse","bounce","triangle","tree","airplane","corn","monkey","ghost","daisy","rocket","river","face","seashell","finger","monster","coin","coat","candy","alive","turtle","bracelet","chicken","bunny","light","egg","family","bridge","bat","lemon","mitten","roly poly/pill bug/doodle bug","jar","lollipop","arm","sunglasses","love","square","octopus","candle","spider","snake","computer","bird","neck","hat","bowl","blanket","person","wheel","bounce","cow","balloon","blocks","monkey","ghost","daisy","rabbit","rainbow","head","sheep","elephant","slide","basketball","horse","milk","coat","backpack","candy","crab","egg","whale","pie","cloud","lemon","train","smile","beach","bathroom","alligator","cookie","shoe","kite","pen","bear","swimming pool","sea","caterpillar","bone","square","book","candle","fish","zebra","bird","neck","owl","zoo","bark","duck","hamburger","baseball","bread","water","mouse","airplane","bug","flower","balloon","daisy","orange","swing","beak","rock","face","seashell","monster","chair","mountains","grass","sea turtle","king","pizza","fire","pencil","key","beach","bathroom","jacket","bell","inchworm","swimming pool","knee","sea","jar","caterpillar","cheese","hook","cupcake","hippo","tail","plant","pants","cube","zoo","bowl","blanket","baseball","water","tree","dragon","ears","night","monkey","flag","ghost","daisy","nose","slide","lizard","rock","bee","monster","car","eyes","ball","bunk bed","king","family","frog","jellyfish","lemon","curl","socks","smile","key","beach","bathroom","hand","pen","inchworm","knee","jar","desk","motorcycle","caterpillar","oval","man","doll","giraffe","cupcake","boy","zebra","computer","rain","snowflake","bike","bow","wheel","lamp","popsicle","dragon","balloon","blocks","ghost","swing","sheep","broom","finger","bench","button","grass","turtle","girl","ball","baby","jellyfish","train","smile","dinosaur","leg","bathroom","cookie","mitten","suitcase","pen","bear","swimming pool","knee","motorcycle","Mickey Mouse","cheese","hook","ants","giraffe","glasses","boy","starfish","bus","ant","door","kitten","pants","bumblebee","grapes","bird","bike","bark","window","chimney","purse","mouse","popsicle","dragon","lion","pillow","night","ghost","daisy","orange","beak","river","face","table","finger","spoon","monster","chair","feet","candy","alive","apple","chicken","light","egg","whale","pizza","pie","cloud","socks","leg","ship","pencil","shoe","mouth","roly poly/pill bug/doodle bug","caterpillar","carrot","square","octopus","snail","plant","computer","Earth","skateboard","person","window","chimney","hamburger","baseball","boat","bread","wheel","tree","popsicle","cow","corn","monkey","head","beak","bee","basketball","seashell","finger","truck","float","bench","zigzag","mountains","turtle","chicken","legs","bunny","bunk bed","sea turtle","family","pig","curl","socks","feather","cookie","football","sea","sun","sunglasses","doll","square","bus","tail","door","kitten","snake","box","computer","Earth","bark","circle","chimney","shirt","bread","dog","lamp","mouse","airplane","helicopter","night","ghost","swing","rock","bee","rocket","river","seashell","float","apple","bracelet","king","bat","island","curl","feather","beach","alligator","shoe","crack","jacket","mouth","suitcase","bear","jail","roly poly/pill bug/doodle bug","jar","sun","motorcycle","carrot","cat","doll","music","ladybug","cupcake","boy","cup"]
+      let mediumWordPoolWithDups = ["chalk","quadruplets","ping pong","highway","bathroom scale","garbage","bathtub","blue jeans","sand","lemon","mold","aircraft","windmill","spool","faucet","golf","peck","ladder","chef","dolphin","parka","bubble","toe","flashlight","newspaper","children","watering can","cracker","seahorse","braid","weight","contain","pipe","whistle","sidekick","rowboat","cheeseburger","tail","chip","twig","sneeze","face","hiss","marry","Ferris wheel","shampoo","drill","taxi","calendar","leak","window","birthday cake","pencil","light bulb","ping pong","bathroom scale","tuba","goose","mask","happy","horn","fern","rocking chair","roof","boot","bike","restaurant","crown","smile","hen","wrist","cockroach","lighthouse","wood","vest","chimney","log","rib","detective","wallet","tape","seahorse","neighbor","city","aquarium","hurdle","snowflake","rowboat","radish","lawn mower","panda","cape","unicycle","ironing board","monster","ship","mouse","teapot","baggage","wheelbarrow","wall","maze","doorknob","dominoes","banjo","pencil","light bulb","pocket","iron","throne","fur","escalator","broccoli","skirt","jewelry","shipwreck","purse","wood","gasoline","silverware","plug","hoof","log","flamingo","doghouse","anemone","hippopotamus","wallet","frying pan","subway","drumstick","mirror","germ","ring","zipper","shadow","movie theater","shoulder","fanny pack","Ferris wheel","spell","mud","gap","pond","fishing pole","submarine","day","truck","baggage","ceiling fan","window","reindeer","helicopter","pinecone","goose","towel","rain","rose","dragon","smile","maid","needle","school","tusk","hopscotch","wrench","propeller","railroad","plug","sack","outer space","scientist","newlywed","clown","seahorse","weight","ice","pipe","narwhal","trash can","tail","subway","jelly","connect","lawnmower","nest","spell","sit","ink","pineapple","mouse","teapot","dump truck","hair dryer","castle","porthole","skateboard","celery","stove","ceiling fan","doorknob","notebook","flood","sky","ambulance","pajamas","bathtub","toothbrush","quilt","college","piano","shipwreck","yacht","mouth","tusk","hopscotch","platypus","collar","tadpole","curb","vest","crayon","mailbox","batteries","crow","rib","children","sleeve","sea turtle","spill","weight","peanut","oven","race car","shade","kitchen","saxophone","hammer","cape","see","face","spell","pond","trumpet","room","pie","teacher","thumb","paint","powder","fairies","quadruplets","dominoes","coal","tuba","elevator","newborn","art","cake","pinecone","screwdriver","ocean","elbow","pea","porch","cougar","trophy","cheetah","rug","chef","heel","drawer","dragonfly","nurse","deer","platypus","swimming pool","juice","strawberry","farm","hip","cave","magic carpet","lightsaber","hole","sail","sidewalk","bell","floor","dog leash","sit","ink","deep","seaweed","salt and pepper","knee","cell phone","pinwheel","queen","wheelbarrow"]
+      let wordSet = new Set(easyWordPoolWithDups)
+      let removableElementSet = function(set) {
+        let setCopy = new Set(set)
+        let removeFun = () => {
+          let wordPool = Array.from(setCopy)
+          let randomIndex = max => Math.floor(Math.random() * Math.floor(max))
+          let randomElement = wordPool[randomIndex(wordPool.length)]
+          setCopy.delete(randomElement)
+          return randomElement
+        }
+        return {
+          remove: removeFun,
+          value: setCopy
+        }
+      }
+      let removableWordSet = removableElementSet(wordSet)
+      let words = [...Array(100).keys()].map(i => removableWordSet.remove()).join(', ')
+
+      document.getElementById('main').innerHTML = words
+    </script>
   </body>
-  <script type="text/javascript">
-    let wordPoolWithDups = ["star","angel","fish","snowflake","neck","owl","baseball","clock","water","triangle","leaf","flower","cow","lion","corn","night","head","stairs","bee","float","backpack","button","zigzag","eyes","alive","chicken","legs","light","bunk bed","pizza","bridge","frog","bat","baby","cloud","feather","beach","bathroom","crack","jacket","inchworm","football","lollipop","carrot","cat","ants","glasses","candle","kitten","snake","lips","grapes","computer","rain","owl","skateboard","window","hamburger","purse","airplane","leaf","ghost","daisy","stairs","beak","mountain","river","table","coin","backpack","button","heart","zigzag","egg","king","island","lemon","curl","dinosaur","leg","ship","bathroom","cookie","crack","swimming pool","knee","jail","ocean","cherry","drum","caterpillar","oval","cheese","love","bone","cupcake","glasses","book","candle","door","angel","fish","owl","skateboard","woman","hamburger","boat","fork","clock","purse","bounce","triangle","tree","airplane","corn","monkey","ghost","daisy","rocket","river","face","seashell","finger","monster","coin","coat","candy","alive","turtle","bracelet","chicken","bunny","light","egg","family","bridge","bat","lemon","mitten","roly poly/pill bug/doodle bug","jar","lollipop","arm","sunglasses","love","square","octopus","candle","spider","snake","computer","bird","neck","hat","bowl","blanket","person","wheel","bounce","cow","balloon","blocks","monkey","ghost","daisy","rabbit","rainbow","head","sheep","elephant","slide","basketball","horse","milk","coat","backpack","candy","crab","egg","whale","pie","cloud","lemon","train","smile","beach","bathroom","alligator","cookie","shoe","kite","pen","bear","swimming pool","sea","caterpillar","bone","square","book","candle","fish","zebra","bird","neck","owl","zoo","bark","duck","hamburger","baseball","bread","water","mouse","airplane","bug","flower","balloon","daisy","orange","swing","beak","rock","face","seashell","monster","chair","mountains","grass","sea turtle","king","pizza","fire","pencil","key","beach","bathroom","jacket","bell","inchworm","swimming pool","knee","sea","jar","caterpillar","cheese","hook","cupcake","hippo","tail","plant","pants","cube","zoo","bowl","blanket","baseball","water","tree","dragon","ears","night","monkey","flag","ghost","daisy","nose","slide","lizard","rock","bee","monster","car","eyes","ball","bunk bed","king","family","frog","jellyfish","lemon","curl","socks","smile","key","beach","bathroom","hand","pen","inchworm","knee","jar","desk","motorcycle","caterpillar","oval","man","doll","giraffe","cupcake","boy","zebra","computer","rain","snowflake","bike","bow","wheel","lamp","popsicle","dragon","balloon","blocks","ghost","swing","sheep","broom","finger","bench","button","grass","turtle","girl","ball","baby","jellyfish","train","smile","dinosaur","leg","bathroom","cookie","mitten","suitcase","pen","bear","swimming pool","knee","motorcycle","Mickey Mouse","cheese","hook","ants","giraffe","glasses","boy","starfish","bus","ant","door","kitten","pants","bumblebee","grapes","bird","bike","bark","window","chimney","purse","mouse","popsicle","dragon","lion","pillow","night","ghost","daisy","orange","beak","river","face","table","finger","spoon","monster","chair","feet","candy","alive","apple","chicken","light","egg","whale","pizza","pie","cloud","socks","leg","ship","pencil","shoe","mouth","roly poly/pill bug/doodle bug","caterpillar","carrot","square","octopus","snail","plant","computer","Earth","skateboard","person","window","chimney","hamburger","baseball","boat","bread","wheel","tree","popsicle","cow","corn","monkey","head","beak","bee","basketball","seashell","finger","truck","float","bench","zigzag","mountains","turtle","chicken","legs","bunny","bunk bed","sea turtle","family","pig","curl","socks","feather","cookie","football","sea","sun","sunglasses","doll","square","bus","tail","door","kitten","snake"]
-    let wordSet = new Set(wordPoolWithDups)
-
-    let removableElementSet = function(set) {
-      let setCopy = new Set(set)
-      let removeFun = () => {
-        let wordPool = Array.from(setCopy)
-        let randomIndex = max => Math.floor(Math.random() * Math.floor(max))
-        let randomElement = wordPool[randomIndex(wordPool.length)]
-        setCopy.delete(randomElement)
-        return randomElement
-      }
-      return {
-        remove: removeFun,
-        value: setCopy
-      }
-    }
-    let removableWordSet = removableElementSet(wordSet)
-    let words = [...Array(100).keys()].map(i => removableWordSet.remove()).join(', ')
-
-    document.getElementById('main').innerHTML = words
-  </script>
 </html>
